@@ -4,6 +4,11 @@
 
 # Introduction
 
-This project will make you sort data on a stack, with a limited set of instructions, using the lowest possible number of actions. To succeed you’ll have to manipulate various types of algorithms and choose the most appropriate solution (out of many) for an optimized data sorting.
+This project asks me to sort data on a stack, with a limited set of instructions, using the smallest possible number of actions. To succeed, I need to manipulate different types of algorithms and choose the most appropriate solution (from among several) for optimized data sorting.
 
 At [42 School](https://github.com/42School), almost every project must be written in accordance to the [Norm](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf), the school's coding standard. As a result, the implementation of certain parts may appear strange and for sure had room for improvement.
+
+##  :lock: License
+
+GNU GENERAL PUBLIC LICENSE
+Version 3
