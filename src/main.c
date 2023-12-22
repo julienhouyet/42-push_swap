@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:42:13 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 16:50:36 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/22 17:09:23 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	check_argv(int argc, char **argv, t_stacks *stacks, int index)
 {
 	long	temp;
 
-	if (argc < 2)
-		exit(1);
 	stacks->a.size = 0;
 	stacks->b.size = 0;
 	stacks->a.nb = ft_calloc((argc - 1), sizeof(int));
