@@ -6,41 +6,27 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:42:13 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 11:10:47 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/22 11:50:13 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int		is_number(char *str)
-{
-	int i;
-
-	i = 0;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	if (!str[i])
-		return 0;
-	while (str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return 0;
-		i++;
-	}
-	return 1;
-}
-
 void	check_argv(int argc, char **argv)
 {
 	int	i;
+	long temp;
 
 	if (argc < 2)
 		exit(1);
-	while (i < argc)
+	i = 0;
+	while (++i < argc)
 	{
-		if (!is_number(argv[i]))
+		if (!ft_is_number(argv[i]))
 			ft_error("Error\n");
-		i++;
+		temp = ft_atol(argv[i]);
+		if (temp < INT_MIN || temp > INT_MAX)
+			ft_error("Error\n");
 	}
 	ft_printf("OK");
 }

@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:42:11 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 10:09:45 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/22 11:50:35 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define PUSH_SWAP_H
 # include "libft/include/libft.h"
 # include <stdlib.h>
+# include <limits.h>
+# include <stdio.h>
 
 typedef struct s_stack
 {
@@ -28,5 +30,8 @@ typedef struct s_stacks
 }				t_stacks;
 
 void	ft_error(char *message);
+
+int		ft_is_number(char *str);
+long	ft_atol(const char *str);
 
 #endif

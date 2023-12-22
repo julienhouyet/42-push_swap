@@ -1,22 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 09:06:48 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 11:40:03 by jhouyet          ###   ########.fr       */
+/*   Created: 2023/12/22 11:39:20 by jhouyet           #+#    #+#             */
+/*   Updated: 2023/12/22 11:50:29 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
+#include "../include/push_swap.h"
 
-long	ft_atoi(const char *str)
+int		ft_is_number(char *str)
+{
+	int i;
+
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	if (!str[i])
+		return 0;
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return 0;
+		i++;
+	}
+	return 1;
+}
+
+long	ft_atol(const char *str)
 {
 	int				i;
 	int				neg;
-	long int		result;
+	long		result;
 
 	i = 0;
 	neg = 1;
@@ -33,10 +51,6 @@ long	ft_atoi(const char *str)
 	{
 		result = (result * 10) + (str[i] - '0');
 		i++;
-		if (result * neg < INT_MIN)
-			return (0);
-		if (result * neg > INT_MAX)
-			return (-1);
 	}
-	return ((int)result * neg);
+	return ((long)result * neg);
 }
