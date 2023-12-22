@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 13:34:07 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 16:51:37 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/22 16:52:16 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ void	reverse_rotate(t_stack *stack)
 
 	if (stack->size < 2)
 		return ;
-	temp = stack->numbers[stack->size - 1];
+	temp = stack->nb[stack->size - 1];
 	i = stack->size;
 	while (i > 0)
 	{
-		stack->numbers[i] = stack->numbers[i - 1];
+		stack->nb[i] = stack->nb[i - 1];
 		i--;
 	}
-	stack->numbers[0] = temp;
+	stack->nb[0] = temp;
 }
 
 void	ft_rra(t_stacks *stacks)
