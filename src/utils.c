@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 11:39:20 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 13:21:18 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/22 17:12:15 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_is_duplicate(int number, t_stack stack)
 	i = 0;
 	while (i < stack.size)
 	{
-		if (stack.numbers[i] == number)
+		if (stack.nb[i] == number)
 			return (1);
 		i++;
 	}
