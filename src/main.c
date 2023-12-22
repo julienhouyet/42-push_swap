@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:42:13 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 13:21:54 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/22 14:21:42 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ void	check_argv(int argc, char **argv, t_stacks *stacks)
 		exit(1);
 	i = 0;
 	stacks->a.size = 0;
+	stacks->b.size = 0;
 	stacks->a.numbers = ft_calloc((argc - 1), sizeof(int));
+	stacks->b.numbers = ft_calloc((argc - 1), sizeof(int));
 	if (!stacks->a.numbers)
 		ft_free_error("Error\nMalloc stacks->a.numbers\n\n", stacks);
 	while (++i < argc)
@@ -41,7 +43,6 @@ void	check_argv(int argc, char **argv, t_stacks *stacks)
 int	main(int argc, char **argv)
 {
 	t_stacks	*stacks;
-	int			i;
 
 	stacks = ft_calloc(1, sizeof(t_stacks));
 	check_argv(argc, argv, stacks);
