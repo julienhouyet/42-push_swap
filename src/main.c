@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:42:13 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 17:09:23 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/22 17:29:18 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,17 @@ int	main(int argc, char **argv)
 		clean_argv(argv[1], stacks);
 	else
 		check_argv(argc, argv, stacks, 0);
+	ft_is_sorted(stacks);
 	if (stacks->a.size == 2 && stacks->a.nb[0] > stacks->a.nb[1])
 		ft_sa(stacks);
+	else if (stacks->a.size == 3)
+		ft_sort_three(stacks);
+	else if (stacks->a.size == 4)
+		ft_sort_four(stacks);
+	else if (stacks->a.size == 5)
+		ft_sort_five(stacks);
+	else
+		ft_sort_radix(stacks);
 	ft_free_exit(stacks);
 	return (0);
 }

@@ -6,11 +6,28 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 11:39:20 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 17:12:15 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/22 17:47:33 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	ft_is_sorted(t_stacks *stacks)
+{
+	int	i;
+	int	result;
+
+	i = 0;
+	result = 0;
+	while (i < stacks->a.size - 1)
+	{
+		if (stacks->a.nb[i] > stacks->a.nb[i + 1])
+			result = 1;
+		i++;
+	}
+	if (result == 0)
+		ft_free_error("", stacks);
+}
 
 int	ft_is_duplicate(int number, t_stack stack)
 {

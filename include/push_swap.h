@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:42:11 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 16:06:36 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/22 17:28:28 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,12 @@ void	ft_rra(t_stacks *stacks);
 void	ft_rrb(t_stacks *stacks);
 void	ft_rrr(t_stacks *stacks);
 
+void	ft_sort_three(t_stacks *stacks);
+void	ft_sort_four(t_stacks *stacks);
+void	ft_sort_five(t_stacks *stacks);
+void	ft_sort_radix(t_stacks *stacks);
+
+void	ft_is_sorted(t_stacks *stacks);
 int		ft_is_duplicate(int number, t_stack stack);
 int		ft_is_number(char *str);
 long	ft_atol(const char *str);
