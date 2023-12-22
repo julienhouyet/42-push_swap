@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:42:13 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 14:21:42 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/22 14:28:27 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,37 @@ int	main(int argc, char **argv)
 	check_argv(argc, argv, stacks);
 	if (!stacks)
 		ft_free_error("Error\nMalloc t_stacks\n\n", stacks);
+	/*
+    int i;
+    i = 0;
+    while (i < stacks->a.size)
+    {
+        ft_printf("a : %d\n", stacks->a.numbers[i]);
+        i++;
+    }   
+    i = 0;
+    while (i < stacks->b.size)
+    {
+        ft_printf("b : %d\n", stacks->b.numbers[i]);
+        i++;
+    }
+    ft_pb(stacks);
+    ft_pb(stacks);
+    ft_pa(stacks);
+    i = 0;
+    while (i < stacks->a.size)
+    {
+        ft_printf("a : %d\n", stacks->a.numbers[i]);
+        i++;
+    }
+    i = 0;
+    while (i < stacks->b.size)
+    {
+        ft_printf("b : %d\n", stacks->b.numbers[i]);
+        i++;
+    }
+	ft_printf("\n\n");
+	ft_printf("Size a :%d\n", stacks->a.size);
+	ft_printf("Size b :%d\n", stacks->b.size);
+	*/
 }
