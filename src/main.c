@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:42:13 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 14:40:56 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/22 15:50:29 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,7 @@ int	main(int argc, char **argv)
         ft_printf("b : %d\n", stacks->b.numbers[i]);
         i++;
     }
-    ft_ra(stacks);
-    ft_ra(stacks);
-    ft_ra(stacks);
+    ft_rra(stacks);
     i = 0;
     while (i < stacks->a.size)
     {
