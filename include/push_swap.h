@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:42:11 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 11:50:35 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/22 12:43:20 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_stacks
 
 void	ft_error(char *message);
 
+int		ft_is_duplicate(int number, t_stack stack);
 int		ft_is_number(char *str);
 long	ft_atol(const char *str);
 

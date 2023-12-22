@@ -6,7 +6,7 @@
 #    By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/13 11:42:24 by jhouyet           #+#    #+#              #
-#    Updated: 2023/12/22 10:21:17 by jhouyet          ###   ########.fr        #
+#    Updated: 2023/12/22 12:25:53 by jhouyet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ LIBFT_PATH 	= libft/
 
 CC			= gcc
 RM			= rm -f
-C_FLAGS		= -Wall -Wextra -Werror
+C_FLAGS		= -Wall -Wextra -Werror -fsanitize=address -g -ggdb3
 INCS 		= -I$(INC_DIR) -I.
 
 TOTAL_FILES 	:= $(words $(SRC))

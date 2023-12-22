@@ -6,13 +6,13 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 09:06:48 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 11:40:03 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/22 12:08:07 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/libft.h"
 
-long	ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int				i;
 	int				neg;
