@@ -1,6 +1,6 @@
 # push_swap
 
-![42-push_swap](https://socialify.git.ci/julienhouyet/42-push_swap/image?language=1&logo=https%3A%2F%2Fgithub.com%2Fayogun%2F42-project-badges%2Fraw%2Fmain%2Fbadges%2Fpush_swapm.png%3Fraw%3Dtrue&name=1&owner=1&pattern=Circuit%20Board&theme=Auto)
+![42-push_swap](https://socialify.git.ci/julienhouyet/42-push_swap/image?logo=https%3A%2F%2Fgithub.com%2Fayogun%2F42-project-badges%2Fraw%2Fmain%2Fbadges%2Fpush_swapm.png&name=1&owner=1&pattern=Circuit%20Board&theme=Auto)
 
 # Introduction
 
