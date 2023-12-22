@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:42:11 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 17:28:28 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/22 18:19:25 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_stacks
 
 void	ft_free_error(char *message, t_stacks *stacks);
 void	ft_free_exit(t_stacks *stacks);
+void	ft_free_split(char **split_args, int count_args);
 
 void	ft_sa(t_stacks *stacks);
 void	ft_sb(t_stacks *stacks);
