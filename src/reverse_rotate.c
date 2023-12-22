@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 13:34:07 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 15:50:11 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/22 16:51:37 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	reverse_rotate(t_stack *stack)
 {
 	int	temp;
-	int i;
+	int	i;
 
 	if (stack->size < 2)
 		return ;

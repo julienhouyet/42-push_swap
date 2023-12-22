@@ -6,38 +6,50 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:42:13 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 15:50:29 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/22 16:50:36 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	check_argv(int argc, char **argv, t_stacks *stacks)
+void	check_argv(int argc, char **argv, t_stacks *stacks, int index)
 {
-	int		i;
 	long	temp;
 
 	if (argc < 2)
 		exit(1);
-	i = 0;
 	stacks->a.size = 0;
 	stacks->b.size = 0;
-	stacks->a.numbers = ft_calloc((argc - 1), sizeof(int));
-	stacks->b.numbers = ft_calloc((argc - 1), sizeof(int));
-	if (!stacks->a.numbers)
-		ft_free_error("Error\nMalloc stacks->a.numbers\n\n", stacks);
-	while (++i < argc)
+	stacks->a.nb = ft_calloc((argc - 1), sizeof(int));
+	stacks->b.nb = ft_calloc((argc - 1), sizeof(int));
+	if (!stacks->a.nb || !stacks->b.nb)
+		ft_free_error("Error\nMalloc stacks->a/b\n\n", stacks);
+	while (++index < argc)
 	{
-		if (!ft_is_number(argv[i]))
+		if (!ft_is_number(argv[index]))
 			ft_free_error("Error\n", stacks);
-		temp = ft_atol(argv[i]);
+		temp = ft_atol(argv[index]);
 		if (temp < INT_MIN || temp > INT_MAX)
 			ft_free_error("Error\n", stacks);
 		if (ft_is_duplicate(temp, stacks->a))
 			ft_free_error("Error\n", stacks);
-		stacks->a.numbers[stacks->a.size] = (int)temp;
+		stacks->a.nb[stacks->a.size] = (int)temp;
 		stacks->a.size++;
 	}
+}
+
+void	clean_argv(char *args, t_stacks *stacks)
+{
+	char	**split_args;
+	int		count_args;
+
+	split_args = ft_split(args, ' ');
+	if (!split_args)
+		ft_free_error("Error\nSplit failed\n\n", stacks);
+	count_args = 0;
+	while (split_args[count_args] != NULL)
+		count_args++;
+	check_argv(count_args, split_args, stacks, -1);
 }
 
 int	main(int argc, char **argv)
@@ -45,38 +57,14 @@ int	main(int argc, char **argv)
 	t_stacks	*stacks;
 
 	stacks = ft_calloc(1, sizeof(t_stacks));
-	check_argv(argc, argv, stacks);
 	if (!stacks)
 		ft_free_error("Error\nMalloc t_stacks\n\n", stacks);
-	/*
-    int i;
-    i = 0;
-    while (i < stacks->a.size)
-    {
-        ft_printf("a : %d\n", stacks->a.numbers[i]);
-        i++;
-    }   
-    i = 0;
-    while (i < stacks->b.size)
-    {
-        ft_printf("b : %d\n", stacks->b.numbers[i]);
-        i++;
-    }
-    ft_rra(stacks);
-    i = 0;
-    while (i < stacks->a.size)
-    {
-        ft_printf("a : %d\n", stacks->a.numbers[i]);
-        i++;
-    }
-    i = 0;
-    while (i < stacks->b.size)
-    {
-        ft_printf("b : %d\n", stacks->b.numbers[i]);
-        i++;
-    }
-	ft_printf("\n\n");
-	ft_printf("Size a :%d\n", stacks->a.size);
-	ft_printf("Size b :%d\n", stacks->b.size);
-	*/
+	if (argc == 2)
+		clean_argv(argv[1], stacks);
+	else
+		check_argv(argc, argv, stacks, 0);
+	if (stacks->a.size == 2 && stacks->a.nb[0] > stacks->a.nb[1])
+		ft_sa(stacks);
+	ft_free_exit(stacks);
+	return (0);
 }
