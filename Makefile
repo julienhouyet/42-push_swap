@@ -6,7 +6,7 @@
 #    By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/13 11:42:24 by jhouyet           #+#    #+#              #
-#    Updated: 2023/12/20 16:22:31 by jhouyet          ###   ########.fr        #
+#    Updated: 2023/12/22 10:21:17 by jhouyet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,10 +34,19 @@ RM			= rm -f
 C_FLAGS		= -Wall -Wextra -Werror
 INCS 		= -I$(INC_DIR) -I.
 
+TOTAL_FILES 	:= $(words $(SRC))
+CURRENT_FILE 	:= 0
+
+define progress_bar_push_swap
+    @$(eval CURRENT_FILE=$(shell echo $$(($(CURRENT_FILE) + 1))))
+    @printf "\r$(YELLOW)Compiling Push Swap... [%-$(TOTAL_FILES)s] %d/%d $(NC)" $$(for i in $$(seq 1 $(CURRENT_FILE)); do printf "#"; done) $(CURRENT_FILE) $(TOTAL_FILES)
+	@if [ $(CURRENT_FILE) -eq $(TOTAL_FILES) ]; then echo ""; fi
+endef
+
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
-	@echo "$(YELLOW)Compiling $<$(NC)"
 	@$(CC) $(CFLAGS) $(INCS) -c $< -o $@
+	$(call progress_bar_push_swap)
 
 all: $(LIBFT) $(NAME)
 
