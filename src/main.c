@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:42:13 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 18:54:04 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/23 05:45:00 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	ft_free_exit(stacks);
-	system("leaks push_swap");
+	//system("leaks push_swap");
 	*/
 	return (0);
 }

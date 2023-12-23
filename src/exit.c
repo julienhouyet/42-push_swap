@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 10:03:46 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/22 18:19:44 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/23 06:07:40 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_error(char *message)
 {
 	ft_printf(message);
-	system("leaks push_swap");
 	exit(1);
 }
 
