@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 07:11:38 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/23 12:15:05 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/23 12:24:11 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_bits_max(int *numbers, int size)
 	return (bits_max);
 }
 
-int	ft_move_min_to_b(t_stacks *stacks)
+void	ft_move_min_to_b(t_stacks *stacks)
 {
 	int	index_min;
 
