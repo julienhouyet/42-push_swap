@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:42:13 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/23 05:45:00 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/23 08:45:55 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	main(int argc, char **argv)
 		ft_sort_five(stacks);
 	else
 		ft_sort_radix(stacks);
-	/*
+	
 	int i;
 	i = 0;
     while (i < stacks->a.size)
@@ -83,6 +83,6 @@ int	main(int argc, char **argv)
 	}
 	ft_free_exit(stacks);
 	//system("leaks push_swap");
-	*/
+	
 	return (0);
 }
