@@ -6,7 +6,7 @@
 #    By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/13 11:42:24 by jhouyet           #+#    #+#              #
-#    Updated: 2023/12/22 18:12:59 by jhouyet          ###   ########.fr        #
+#    Updated: 2023/12/23 08:02:41 by jhouyet          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRC_DIR		= src/
 OBJ_DIR		= obj/
 INC_DIR		= include/
 
-SRC 		= $(wildcard $(SRC_DIR)*.c)
+SRC 		= $(wildcard $(SRC_DIR)*.c) $(wildcard $(SRC_DIR)moves/*.c)
 OBJ			= $(SRC:$(SRC_DIR)%.c=$(OBJ_DIR)%.o)
 
 LIBFT 		= libft/lib/libft.a
@@ -45,6 +45,7 @@ endef
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(OBJ_DIR)/moves
 	@$(CC) $(CFLAGS) $(INCS) -c $< -o $@
 	$(call progress_bar_push_swap)
 
