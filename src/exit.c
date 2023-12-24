@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 10:03:46 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/23 06:07:40 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/24 08:09:39 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_error(char *message)
 {
-	ft_printf(message);
+	ft_putstr_fd(message, 2);
 	exit(1);
 }
 
