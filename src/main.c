@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:42:13 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/24 08:26:09 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/24 13:53:41 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	main(int argc, char **argv)
 		ft_sort_five(stacks);
 	else
 		ft_sort_radix(stacks);
-	//print_stacks(stacks);
+	print_stacks(stacks);
 	ft_free_exit(stacks);
 	return (0);
 }

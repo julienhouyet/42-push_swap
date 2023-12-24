@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 11:39:20 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/24 09:09:06 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/24 12:41:07 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,14 @@ void	print_stacks(t_stacks *stacks) {
         printf(" ");
 
         if (i < stacks->b.size)
-            printf("%d", stacks->b.nb[i]);
+            printf("\t%d", stacks->b.nb[i]);
         else
-            printf("_");
+            printf("\t_");
 
         printf("\n");
     }
-    printf("a b\n");
+	printf("---------\n");
+    printf("a\tb\n");
 }
 
 int	ft_is_sorted(t_stacks *stacks)
