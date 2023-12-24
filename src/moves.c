@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 07:11:38 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/23 12:24:11 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/24 07:58:25 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,26 +31,6 @@ int	ft_index_min(int *numbers, int size)
 		i++;
 	}
 	return (index_min);
-}
-
-int	ft_bits_max(int *numbers, int size)
-{
-	int	number_max;
-	int	bits_max;
-	int	i;
-
-	number_max = 0;
-	bits_max = 0;
-	i = 0;
-	while (i < size)
-	{
-		if (numbers[i] > number_max)
-			number_max = numbers[i];
-		i++;
-	}
-	while ((number_max >> bits_max) != 0)
-		bits_max++;
-	return (bits_max);
 }
 
 void	ft_move_min_to_b(t_stacks *stacks)

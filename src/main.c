@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:42:13 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/23 08:45:55 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/24 08:00:37 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,8 @@ int	main(int argc, char **argv)
 		clean_argv(argv[1], stacks);
 	else
 		check_argv(argc, argv, stacks, 0);
-	ft_is_sorted(stacks);
+	if (ft_is_sorted(stacks))
+		ft_free_error("", stacks);
 	if (stacks->a.size == 2 && stacks->a.nb[0] > stacks->a.nb[1])
 		ft_sa(stacks);
 	else if (stacks->a.size == 3)
@@ -73,16 +74,7 @@ int	main(int argc, char **argv)
 		ft_sort_five(stacks);
 	else
 		ft_sort_radix(stacks);
-	
-	int i;
-	i = 0;
-    while (i < stacks->a.size)
-	{
-		ft_printf("a : %d\n", stacks->a.nb[i]);
-		i++;
-	}
+	//print_stacks(stacks);
 	ft_free_exit(stacks);
-	//system("leaks push_swap");
-	
 	return (0);
 }

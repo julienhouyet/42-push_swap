@@ -6,3 +6,7 @@ obj/
 libft/obj
 libft/lib
 checker_Mac
+checker_OS
+pro_checker
+push_swap_test.sh
+traces.txt

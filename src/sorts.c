@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 16:08:26 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/23 10:10:42 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/24 08:01:54 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,27 +53,5 @@ void	ft_sort_five(t_stacks *stacks)
 
 void	ft_sort_radix(t_stacks *stacks)
 {
-	int	bits_max;
-	int	num;
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	bits_max = ft_bits_max(stacks->a.nb, stacks->a.size);
-	while (i < bits_max)
-	{
-		while (j < stacks->a.size)
-		{
-			num = stacks->a.nb[0];
-			if (((num >> i) & 1) == 0)
-				ft_ra(stacks);
-			else
-				ft_pb(stacks);
-			j++;
-		}
-		i++;
-		while (stacks->b.size > 0)
-			ft_pa(stacks);
-	}
+	ft_printf("Radix Sort");
 }

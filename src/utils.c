@@ -6,13 +6,36 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 11:39:20 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/23 09:11:35 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/24 07:55:13 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_is_sorted(t_stacks *stacks)
+
+void	print_stacks(t_stacks *stacks) {
+    int max_size = stacks->a.size > stacks->b.size ? stacks->a.size : stacks->b.size;
+    
+    printf("---------\n");
+    for (int i = 0; i < max_size; i++) {
+        if (i < stacks->a.size)
+            printf("%d", stacks->a.nb[i]);
+        else
+            printf("_");
+
+        printf(" ");
+
+        if (i < stacks->b.size)
+            printf("%d", stacks->b.nb[i]);
+        else
+            printf("_");
+
+        printf("\n");
+    }
+    printf("a b\n");
+}
+
+int	ft_is_sorted(t_stacks *stacks)
 {
 	int	i;
 	int	result;
@@ -26,7 +49,9 @@ void	ft_is_sorted(t_stacks *stacks)
 		i++;
 	}
 	if (result == 0)
-		ft_free_error("", stacks);
+		return (1);
+	else
+		return (0);
 }
 
 int	ft_is_duplicate(int number, t_stack stack)
