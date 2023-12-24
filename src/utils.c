@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 11:39:20 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/24 07:55:13 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/24 09:09:06 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,15 @@ void	print_stacks(t_stacks *stacks) {
 int	ft_is_sorted(t_stacks *stacks)
 {
 	int	i;
-	int	result;
 
 	i = 0;
-	result = 0;
 	while (i < stacks->a.size - 1)
 	{
 		if (stacks->a.nb[i] > stacks->a.nb[i + 1])
-			result = 1;
+			return (0);
 		i++;
 	}
-	if (result == 0)
-		return (1);
-	else
-		return (0);
+	return (1);
 }
 
 int	ft_is_duplicate(int number, t_stack stack)
