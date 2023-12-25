@@ -8,6 +8,50 @@ This project asks me to sort data on a stack, with a limited set of instructions
 
 At [42 School](https://github.com/42School), almost every project must be written in accordance to the [Norm](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf), the school's coding standard. As a result, the implementation of certain parts may appear strange and for sure had room for improvement.
 
+## :zap: Usage
+
+To use this project, compile the project and :
+
+Run the program with random numbers :
+
+```shell
+$ ./push_swap 2 1 3 6 5 8
+```
+
+###  :electric_plug: Installation
+
+To install the project, clone this repository :
+
+```shell
+$ git@github.com:julienhouyet/42-push_swap.git
+```
+
+###  :package: Commands
+
+To compile the project, run :
+
+```shell
+$ make
+```
+
+To re-compile the project  :
+
+```shell
+$ make re
+```
+
+To wipes all object files :
+
+```shell
+$ make clean
+```
+
+To delete the project and all object files
+
+```shell
+$ make fclean
+```
+
 ##  :lock: License
 
 GNU GENERAL PUBLIC LICENSE
