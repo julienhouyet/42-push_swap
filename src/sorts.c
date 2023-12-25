@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 16:08:26 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/25 11:01:12 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/25 13:04:18 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	ft_sort_radix(t_stacks *stacks)
 	int	bit_max;
 	int	size;
 
-	ft_create_index(stacks);
+	ft_update_index(stacks);
 	bit_max = 0;
 	size = stacks->a.size;
 	while (size > 1 && ++bit_max)

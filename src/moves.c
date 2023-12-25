@@ -6,21 +6,21 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 07:11:38 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/25 10:33:11 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/25 13:04:04 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_create_index(t_stacks *stacks)
+void	ft_update_index(t_stacks *stacks)
 {
 	int		i;
 	int		j;
 	int		k;
-	int		*new_a;
+	int		*index_a;
 
-	new_a = malloc(stacks->a.size * sizeof * new_a);
-	if (new_a == NULL)
+	index_a = malloc(stacks->a.size * sizeof * index_a);
+	if (index_a == NULL)
 		ft_free_error("Error\n", stacks);
 	i = -1;
 	while (++i < stacks->a.size)
@@ -30,12 +30,12 @@ void	ft_create_index(t_stacks *stacks)
 		while (++j < stacks->a.size)
 			if (stacks->a.index[i] > stacks->a.index[j])
 				k++;
-		new_a[i] = k;
+		index_a[i] = k;
 	}
 	i = stacks->a.size;
 	while (i--)
-		stacks->a.index[i] = new_a[i];
-	free(new_a);
+		stacks->a.index[i] = index_a[i];
+	free(index_a);
 }
 
 int	ft_index_min(int *numbers, int size)
