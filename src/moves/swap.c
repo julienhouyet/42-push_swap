@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 13:10:02 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/23 05:38:44 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/25 10:39:07 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,17 @@
 
 void	swap(t_stack *stack)
 {
-	int	temp;
+	int	temp_nb;
+	int	temp_index;
 
 	if (stack->size < 2)
 		return ;
-	temp = stack->nb[0];
+	temp_nb = stack->nb[0];
+	temp_index = stack->index[0];
 	stack->nb[0] = stack->nb[1];
-	stack->nb[1] = temp;
+	stack->index[0] = stack->index[1];
+	stack->nb[1] = temp_nb;
+	stack->index[1] = temp_index;
 }
 
 void	ft_sa(t_stacks *stacks)

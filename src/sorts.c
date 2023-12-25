@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 16:08:26 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/24 14:35:34 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/25 11:01:12 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,44 @@ void	ft_sort_five(t_stacks *stacks)
 	ft_pa(stacks);
 }
 
+static void	sort_radix_b(t_stacks *stacks, int b_size, int bit_max, int j)
+{
+	while (b_size-- && j <= bit_max && !ft_is_sorted(stacks))
+	{
+		if (((stacks->b.index[0] >> j) & 1) == 0)
+			ft_rb(stacks);
+		else
+			ft_pa(stacks);
+	}
+	if (ft_is_sorted(stacks))
+		while (stacks->b.size != 0)
+			ft_pa(stacks);
+}
+
 void	ft_sort_radix(t_stacks *stacks)
 {
-	ft_printf("Radix Sort");
+	int	j;
+	int	bit_max;
+	int	size;
+
+	ft_create_index(stacks);
+	bit_max = 0;
+	size = stacks->a.size;
+	while (size > 1 && ++bit_max)
+		size /= 2;
+	j = -1;
+	while (++j <= bit_max)
+	{
+		size = stacks->a.size;
+		while (size-- && !ft_is_sorted(stacks))
+		{
+			if (((stacks->a.index[0] >> j) & 1) == 0)
+				ft_pb(stacks);
+			else
+				ft_ra(stacks);
+		}
+		sort_radix_b(stacks, stacks->b.size, bit_max, j + 1);
+	}
+	while (stacks->b.size != 0)
+		ft_pa(stacks);
 }

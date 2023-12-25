@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 10:03:46 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/24 08:09:39 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/25 10:47:27 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,12 @@ void	ft_free_error(char *message, t_stacks *stacks)
 	{
 		if (stacks->a.nb)
 			free(stacks->a.nb);
+		if (stacks->a.index)
+			free(stacks->a.index);
 		if (stacks->b.nb)
 			free(stacks->b.nb);
+		if (stacks->b.index)
+			free(stacks->b.index);
 		free(stacks);
 		stacks = NULL;
 	}
@@ -38,8 +42,12 @@ void	ft_free_exit(t_stacks *stacks)
 	{
 		if (stacks->a.nb)
 			free(stacks->a.nb);
+		if (stacks->a.index)
+			free(stacks->a.index);
 		if (stacks->b.nb)
 			free(stacks->b.nb);
+		if (stacks->b.index)
+			free(stacks->b.index);
 		free(stacks);
 		stacks = NULL;
 	}

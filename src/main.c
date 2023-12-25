@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:42:13 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/24 13:53:41 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/25 10:49:37 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ void	check_argv(int argc, char **argv, t_stacks *stacks, int index)
 	stacks->b.size = 0;
 	stacks->a.nb = ft_calloc((argc - 1), sizeof(int));
 	stacks->b.nb = ft_calloc((argc - 1), sizeof(int));
-	if (!stacks->a.nb || !stacks->b.nb)
+	stacks->a.index = ft_calloc((argc - 1), sizeof(int));
+	stacks->b.index = ft_calloc((argc - 1), sizeof(int));
+	if (!stacks->a.nb || !stacks->b.nb || !stacks->a.index || !stacks->b.index)
 		ft_free_error("Error\n", stacks);
 	while (++index < argc)
 	{
@@ -31,6 +33,7 @@ void	check_argv(int argc, char **argv, t_stacks *stacks, int index)
 			ft_free_error("Error\n", stacks);
 		if (ft_is_duplicate(temp, stacks->a))
 			ft_free_error("Error\n", stacks);
+		stacks->a.index[stacks->a.size] = (int)temp;
 		stacks->a.nb[stacks->a.size] = (int)temp;
 		stacks->a.size++;
 	}
@@ -74,7 +77,6 @@ int	main(int argc, char **argv)
 		ft_sort_five(stacks);
 	else
 		ft_sort_radix(stacks);
-	print_stacks(stacks);
 	ft_free_exit(stacks);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 13:33:48 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/23 05:39:00 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/25 10:59:53 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,27 @@ void	push(t_stack *src, t_stack *dest)
 {
 	int	i;
 	int	j;
-	int	temp;
+	int	temp_nb;
+	int	temp_index;
 
 	if (src->size == 0)
 		return ;
-	i = dest->size;
-	j = 0;
-	temp = src->nb[0];
-	while (i > 0)
+	i = dest->size + 1;
+	j = -1;
+	temp_nb = src->nb[0];
+	temp_index = src->index[0];
+	while (--i > 0)
 	{
 		dest->nb[i] = dest->nb[i - 1];
-		i--;
+		dest->index[i] = dest->index[i - 1];
 	}
-	while (j < src->size)
+	while (++j < src->size)
 	{
 		src->nb[j] = src->nb[j + 1];
-		j++;
+		src->index[j] = src->index[j + 1];
 	}
-	dest->nb[0] = temp;
+	dest->nb[0] = temp_nb;
+	dest->index[0] = temp_index;
 	src->size--;
 	dest->size++;
 }

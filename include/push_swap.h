@@ -6,7 +6,7 @@
 /*   By: jhouyet <jhouyet@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:42:11 by jhouyet           #+#    #+#             */
-/*   Updated: 2023/12/24 14:30:00 by jhouyet          ###   ########.fr       */
+/*   Updated: 2023/12/25 11:02:33 by jhouyet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 typedef struct s_stack
 {
 	int	*nb;
+	int	*index;
 	int	size;
 }				t_stack;
 
@@ -50,8 +51,7 @@ void	ft_sort_four(t_stacks *stacks);
 void	ft_sort_five(t_stacks *stacks);
 void	ft_sort_radix(t_stacks *stacks);
 
-void	print_stacks(t_stacks *stacks);
-
+void	ft_create_index(t_stacks *stacks);
 int		ft_index_min(int *numbers, int size);
 void	ft_move_min_to_b(t_stacks *stacks);
 
